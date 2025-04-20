@@ -156,3 +156,15 @@ src/
 ---
 
 #### `2. Function`:
+
+- `Declaration Function`:
+  - Syntax:
+    - > function function_name(parameters){}
+- `Expression Function`:
+  - Syntax:
+    - > const name = function(parameters){}
+- `Arrow Function`:
+  - Syntax:
+    - > const name = (parameters) => {}
+
+---
