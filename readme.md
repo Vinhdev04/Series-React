@@ -181,3 +181,46 @@ src/
 ---
 
 #### `4. Array`:
+
+- `Array`
+  - là một dạng đặc biệt của object
+  - được thiết kế để lưu trữ theo thứ tự và truy cập bằng chỉ sô (index)
+  - index bắt đâu: 0, kết thúc: n-1
+  - `Type of Array`: là 1 `Object` , vậy nên mới khởi tạo 1 mảng được bằng `constructor`
+- `Method`:
+
+  - ### `push()`:
+    - thêm phần tử vào cuối mảng
+  - ### `pop()`:
+    - xóa phần tử cuối mảng
+  - ### `shift()`:
+    - xóa phần tử đầu mảng
+  - ### `unshift`():
+    - thêm phần tử vào đầu mảng
+  - ### `map()`:
+    - duyệt phân tử mảng và `tạo ra mảng mới từ mảng cũ`, `biến mảng thành Object[key-value]`
+  - ### `findIndex()`:
+
+    - Tìm phần tử đầu tiên thỏa mãn trong mảng [true-false]
+
+    ```bash
+        const fruits = ["Cam", "Xoài", "Dứa", "Kiwi"];
+        const res = fruits.findIndex((item) => {
+            return item === "Dứa";
+        });
+        console.log(res); // 2 -> `có và nằm ở vị trí index = 2`
+    ```
+
+  - ### `reducer()`:
+  - ### `some()`:
+  - ### `filter()`:
+  - ### `includes()`:
+  - ### `forEach()`:
+  - `find()`:
+    - dùng để lọc phần tử trong mảng, tuy nhiên nó sẽ trả về giá trị ĐẦU TIÊN tìm thấy ở trong mảng hoặc có thể trả về undefined nếu không tìm thấy
+  - ### `concat()`:
+  - ### `indexOf()`:
+  - ### `join()`:
+  - ### `split()`:
+  - ### `splice()`:
+  - ### ``
