@@ -111,7 +111,7 @@ src/
 
 ---
 
-### Khởi tạo project React
+### 🌐 Khởi tạo project React
 
 - Dùng `Vite` (khuyến nghị)
 
@@ -126,3 +126,33 @@ src/
   ```bash
   npx create-react-ap
   ```
+
+---
+
+### ♻️ **Ôn tập Javascript ES6**
+
+#### `1. Module`:
+
+- Là 1 file chứa mã Javascript mà bạn có thể tái sử dụng ở file khác
+- Giúp chia nhỏ ứng dụng, dễ quản lý và bảo trì
+- Khi sử dụng thêm `type=module` vào file javascript
+  > Ví dụ: `<script type="module" src="script.js"></script>`
+- `Named Export`: cho phép export nhiều phần tử từ một file
+  - Khi import cần sử dụng `{}`
+  - > Ví dụ: `import { showName } from "./main.js"; `
+- `Default Export`: cho phép mỗi `module` chỉ có 1 `default export`
+  - Khi import không cần `{}`
+  - > Ví du: `import grade from "./main.js";`
+- `Import default`:
+  - Tên biến import đặt tùy ý
+- `Import named`:
+  - Đặt tên với `as`
+  - > Ví dụ: `import{myName as newName } from ""  `
+- `import * name from ""`: lấy tất cả
+- `Lưu ý: `
+  - một module chỉ có 1 export default
+  - `import *` sẻ không bao gồm export default
+
+---
+
+#### `2. Function`:
