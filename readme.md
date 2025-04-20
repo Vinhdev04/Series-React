@@ -168,3 +168,16 @@ src/
     - > const name = (parameters) => {}
 
 ---
+
+#### `3. Object and Classes`:
+
+- `Object`:
+  - được sử dụng đê nhóm các giá trị lại với nhau
+  - `key-value`
+- `Class`:
+  - khắc phục nhược điểm của object
+  - sử dụng hàm tạo `constructor()` để khởi tạo thuộc tính cho đối tượng
+
+---
+
+#### `4. Array`:

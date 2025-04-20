@@ -40,4 +40,3 @@ function getInfo(name = "An", age = "20") {
 // getInfo("Vinh");
 console.log(getInfo("Momy"));
 // *--------------------------------------*
-
