@@ -219,8 +219,31 @@ src/
   - `find()`:
     - dùng để lọc phần tử trong mảng, tuy nhiên nó sẽ trả về giá trị ĐẦU TIÊN tìm thấy ở trong mảng hoặc có thể trả về undefined nếu không tìm thấy
   - ### `concat()`:
+    - Phương thức tạo ra một mảng mới bằng cách hợp nhất (kết hợp) các mảng hiện có
+    - Phương thức không thay đổi các mảng hiện có
   - ### `indexOf()`:
   - ### `join()`:
-  - ### `split()`:
-  - ### `splice()`:
-  - ### ``
+    - chuyển đổi một mảng thành một chuỗi các giá trị mảng và có thể chỉ định phân tách bằng (,."",...)
+  - ### `slice()`:
+    - Phương thức không loại bỏ bất kỳ phần tử nào khỏi mảng
+    - Tạo ra một mảng mới
+  - ### `splice(start,deleteCount)`:
+    - Thêm 1 giá trị mới vào mảng
+    - Lấy ra giá trị của 1 mảng
+    - Xóa phần tử khỏi mảng và trả về mảng bị xóa
+    - Tạo ra một mảng mới
+  - ### `toSpliced()`:
+    - Tương tự splice(), nhưng giữ cho mảng gốc không thay đổi
+  - ### `toString()`:
+    - chuyển đổi một mảng thành một chuỗi các giá trị mảng
+  - ### `at()`:
+    - trả về phần tử tại vị trí index
+  - ### `copyWithin()`:
+    - Phương thức sao chép các thành phần mảng đến một vị trí khác trong một mảng
+    - Phương thức ghi đè lên các giá trị hiện có.
+    - Phương thức không thêm các giá trị vào mảng
+    - Phương pháp không thay đổi độ dài của mảng.
+  - ### `flat()`:
+    - Phương thức tạo ra một mảng mới với các phần tử con được nối với độ sâu được chỉ định.
+  - ### `flatMap()`:
+    - Phương thức đầu tiên ánh xạ tất cả các phần tử của một mảng và sau đó tạo một mảng mới bằng cách làm phẳng mảng.

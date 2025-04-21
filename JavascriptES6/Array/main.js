@@ -61,3 +61,48 @@ const res = fruits.findIndex((item) => {
 });
 
 console.log(res); // 2 -> có và nằm ở vị trí index = 2
+
+const trees = ["Pinaple", "Mango", "Watermelon"];
+console.log(trees.toString()); // Pinaple,Mango,Watermelon
+console.log(trees.at(2)); // Watermelon
+
+console.log(trees.join(" ")); // Pinaple Mango Watermelon
+
+const concatArr = trees.concat(fruits);
+console.log(concatArr); // [ 'Pinaple', 'Mango', 'Watermelon', 'Cam', 'Xoài', 'Dứa', 'Kiwi' ]
+
+console.log(fruits); // [ 'Cam', 'Xoài', 'Dứa', 'Kiwi' ]
+console.log(fruits.copyWithin(2, 0));
+console.log(fruits.copyWithin(2, 0, 2));
+
+const myArr = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+const newArr = myArr.flat();
+console.log(newArr); // [ 1, 2, 3, 4, 5, 6 ]
+const flatMaps = newArr.flatMap((x) => x * 10);
+console.log(flatMaps); // [ 10, 20, 30, 40, 50, 60 ]
+
+const arrY = [1, 2, 3, 4, 5];
+console.log(arrY.flatMap((x) => [x, x * 10])); // [ 1, 10, 2, 20, 3, 30, 4, 40, 5, 50 ]
+
+const newArrs = ["Banana", "Orange", "Apple", "Mango"];
+newArrs.splice(1, 0, "Lemon", "Watermelon");
+console.log(newArrs); // [ 'Banana', 'Lemon', 'Watermelon', 'Orange', 'Apple', 'Mango' ]
+
+const food = ["bread", "milk", "fish", "bird"];
+const deleteFood = food.splice(2, 1);
+console.log(deleteFood); // ['fish']
+console.log(food); // [ 'bread', 'milk', 'bird' ]
+
+const months = ["Jan", "Feb", "Mar", "Apr"];
+const spliced = months.toSpliced(0, 3);
+console.log(spliced); // [ 'Apr' ]
+console.log(months); // [ 'Jan', 'Feb', 'Mar', 'Apr' ]
+
+const days = ["Tue", "Mon", "Wed", "Sun"];
+const newDays = days.splice(1); // [ 'Mon', 'Wed', 'Sun' ]
+console.log(days); // [ 'Tue' ]
+console.log(newDays); // [ 'Mon', 'Wed', 'Sun' ]
