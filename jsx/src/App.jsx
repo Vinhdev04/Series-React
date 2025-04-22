@@ -1,5 +1,5 @@
 import "./App.css";
-
+const tank = "src/assets/images/tank.png";
 const date = new Date().toLocaleDateString();
 const timer = new Date().toLocaleTimeString();
 
@@ -16,6 +16,8 @@ function randomTitle() {
 
 function Header() {
   const title = text[randomTitle()];
+  const name = "Hà";
+  let isLogin = true;
   return (
     <>
       <h4>{title}</h4>
@@ -26,6 +28,11 @@ function Header() {
         <p>
           Thời gian hiện tại: <strong>{timer}</strong>
         </p>
+        <p>Xin chào: {name}</p>
+        <p>
+          Trạng thái tài khoản: {isLogin ? "Đã đăng nhập" : "Chưa đăng nhập"}
+        </p>
+        <img src={tank} style={{ width: "100px" }}></img>
       </div>
     </>
   );
