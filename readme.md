@@ -339,3 +339,66 @@ src/
     // { id: 1, name: 'An', email: 'pcv.fed@gmail.com', address: 'HCM', favorite: 'Coding' ,role: 'admin'}
 
   ```
+
+---
+
+## 💠🌐 `REACTJS`
+
+### Cách sử dụng `JSX` trong React
+
+- `JSX` là `Javascript Syntax Extension`, cú pháp mở rộng của Javascript
+- File `.jsx` trình duyệt ko hiểu đuợc mà cần công cụ biên dịch sang Javascript (Vite,...)
+- Để chạy được cần cài đặt `node js`
+- Trong `React` chỉ đuợc `return về 1 phần tử duy nhất` nên cần sử dụng `Fragment`: <></> để bọc các khối code
+  - Lý do sử dụng Fragment:
+    - Không thêm thẻ dư thừa vào DOM
+    - Giữ cho clean code
+
+---
+
+### Tìm hiểu khái niệm vòng đời(`Lifecycle`) của `Class Component` trong React
+
+![Lifecycle](./Sources/Images/lifecycle.png)
+
+- `Data` có thể thay đổi theo thời gian
+- <b> `Init -> Mounting -> Updation -> Unmounting` </b>
+
+  - Giai đoạn `Mounting`: Sinh ra component
+    - `componentWillMount()`:
+      - Được gọi trước khi `render()`
+      - Dùng để đăng ký các sự kiện toàn cục
+      - Dựa vào `props` để tính toán và set lại `state`
+    - `render()`:
+      - Bắt buộc có trong component
+      - `Trả về 1 Object JSX`(Có thể lồng các object với nhau, nhưng phải có 1 object gói tất cả các object lại) để hiển thị hoặc null/false nếu ko muốn hiển thị gi.
+      - `Không được gọi setState() trong hàm này`(cũng như trong các hàm này mà gọi đên), `bởi khi gọi setState() -> render() chạy -> lặp vô hạn`
+    - `componentDidMount()`:
+      - `Được gọi ngay sau khi `render()` được gọi đến lần đầu tiên chạy xong thì sẻ chạy.`
+      - Thường `dùng đê fetch dữ liệu từ server và sau đó setState() đê render ra dữ liệu`
+      - Sau đó các phần tử đuợc sinh ra và `có thể thao tác với DOM băng javascript trong hàm này`
+  - Giai đoạn `Updating`: Cập nhật component
+    - `componentWillReceiveProps(nextProps)`:
+      - `Hàm được chạy khi mà props của component đa được sinh ra có sự thay đổi`.
+      - Phải `gọi setState() nếu muốn render lại dữ liệu`
+    - `shouldComponentUpdate(nextProps,nextState)`:
+      - `Được gọi trước render`
+      - Trả về true/false
+      - Nếu `false` -> `không render lại`
+      - Mặc định là true trong `Component`
+      - Còn `PureComponent` nó sẻ cần so sánh trong `shouldComponentUpdate(nextProps,nextState)`
+    - `componentWillUpdate(nextProps,nextState)`:
+      - `Được gọi ngay sau shouldComponentUpdate()` nếu `shouldComponentUpdate() trả vê true`
+      - `Không gọi setState()` trong hàm này bởi vì `hàm này đê chuân bị update chứ ko tạo ra 1 update mới` -> sẻ rơi vào lặp vô hạn
+      - Hàm `render() được gọi ngay sau hàm này`.
+    - `componentDidUpdate(prevProps,prevState)`:
+      - `Được gọi ngay sau render() từ lần thứ 2 trở đi`
+      - `Cần kiểm tra prevProps,prevState trước khi setState()`
+  - ## Giai đoạn `Unmounting`: Loại bỏ component khỏi DOM
+
+    - `Được gọi khi 1 component đuợc lọai bỏ khỏi DOM`
+    - Thực hiện các tác vụ như dọn dẹp, hủy các timer,phần dư thừa,..
+
+  - ## Ưu tiên sử dụng:
+    ![Recommend use Lifecycle here!](./Sources/Images/lifecycle-02.png)
+
+---
