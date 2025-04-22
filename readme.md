@@ -223,12 +223,12 @@ src/
     - dùng để thực thi một hàm lên từng phần tử của mảng (từ trái sang phải) với một biến tích lũy để thu về một giá trị duy nhất
     - KHÔNG làm thay đổi mảng ban đầu
     - trả về giá trị sau khi rút gọn
-  - ### `some()`: 
-    - xác định xem ít nhất một thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không. 
-    - Nó trả về true nếu nó tìm thấy một phần tử trong mảng mà hàm đã chỉ định trả về true; ngược lại, nó trả về false. 
+  - ### `some()`:
+    - xác định xem ít nhất một thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không.
+    - Nó trả về true nếu nó tìm thấy một phần tử trong mảng mà hàm đã chỉ định trả về true; ngược lại, nó trả về false.
     - Nó không làm thay đổi mảng.
   - ### `every()`:
-    - xác định xem tất cả  thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không. 
+    - xác định xem tất cả thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không.
   - ### `filter()`:
     - KHÔNG làm thay đổi mảng ban đầu
     - trả về 1 mảng mới sau khi lọc
@@ -291,3 +291,18 @@ src/
 
   - ### `flatMap()`:
     - Phương thức đầu tiên ánh xạ tất cả các phần tử của một mảng và sau đó tạo một mảng mới bằng cách làm phẳng mảng.
+
+---
+
+#### `5. Destructuring`:
+
+- là một tính năng quan trọng
+- Cho phép trích xuât dữ liệu từ `array` hoặc `object` một cách nhanh và dễ dàng
+- Với `array` trích xuất thông qua `vị trí (index)`
+- Với `object` trích xuất thông qua `property name` `tên biến phải trùng với ten thuộc tính trong Oject`
+- ` Destructuring` với rest parameter với `Array`
+- ` Destructuring` thiết lập giá trị mặc định với `Array`
+- ` Destructuring` bỏ qua phần tử ko cần thiết với `Array`
+- ` Destructuring` đổi tên biến với `Object`
+- ` Destructuring` với rest parameter với `Object`
+- ` Destructuring` thiết lập giá trị mặc định với `Object`
