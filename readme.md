@@ -402,3 +402,7 @@ src/
     ![Recommend use Lifecycle here!](./Sources/Images/lifecycle-02.png)
 
 ---
+
+### Tìm hiểu vê `Props`
+
+-
