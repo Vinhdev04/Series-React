@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const date = new Date().toLocaleDateString();
+const timer = new Date().toLocaleTimeString();
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const text = [
+  "Chào mừng bạn đến với thế giới React!",
+  "Rất vui được gặp bạn ở đây",
+  "Cùng nhau tìm hiểu thế giới React nào..",
+];
+console.log(text);
+
+function randomTitle() {
+  return Math.floor(Math.random() * text.length);
 }
 
-export default App
+function Header() {
+  const title = text[randomTitle()];
+  return (
+    <>
+      <h4>{title}</h4>
+      <div className="center-text">
+        <p>
+          Hôm nay là: <strong>{date}</strong>
+        </p>
+        <p>
+          Thời gian hiện tại: <strong>{timer}</strong>
+        </p>
+      </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
+export default App;
