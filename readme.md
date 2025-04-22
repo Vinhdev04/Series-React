@@ -193,12 +193,20 @@ src/
     - thêm phần tử vào cuối mảng
   - ### `pop()`:
     - xóa phần tử cuối mảng
+    - CÓ làm thay đổi mảng ban đầu
+    - trả về phần tử đã bị xoá ra khỏi mảng
+    - trả về undefined nếu mảng rỗng
   - ### `shift()`:
     - xóa phần tử đầu mảng
+    - CÓ làm thay đổi mảng ban đầu
+    - trả về phần tử đã bị xoá ra khỏi mảng
+    - trả về undefined nếu mảng rỗng
   - ### `unshift`():
     - thêm phần tử vào đầu mảng
   - ### `map()`:
     - duyệt phân tử mảng và `tạo ra mảng mới từ mảng cũ`, `biến mảng thành Object[key-value]`
+    - iúp tạo ra một mảng mới với các phần tử là kết quả từ việc thực thi một hàm lên TỪNG PHẦN TỬ của mảng ban đầu
+    - KHÔNG làm thay đổi mảng ban đầu
   - ### `findIndex()`:
 
     - Tìm phần tử đầu tiên thỏa mãn trong mảng [true-false]
@@ -212,38 +220,74 @@ src/
     ```
 
   - ### `reducer()`:
-  - ### `some()`:
+    - dùng để thực thi một hàm lên từng phần tử của mảng (từ trái sang phải) với một biến tích lũy để thu về một giá trị duy nhất
+    - KHÔNG làm thay đổi mảng ban đầu
+    - trả về giá trị sau khi rút gọn
+  - ### `some()`: 
+    - xác định xem ít nhất một thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không. 
+    - Nó trả về true nếu nó tìm thấy một phần tử trong mảng mà hàm đã chỉ định trả về true; ngược lại, nó trả về false. 
+    - Nó không làm thay đổi mảng.
+  - ### `every()`:
+    - xác định xem tất cả  thành viên mảng có thỏa mãn bài kiểm tra được xác định bởi hàm đã cho hay không. 
   - ### `filter()`:
+    - KHÔNG làm thay đổi mảng ban đầu
+    - trả về 1 mảng mới sau khi lọc
+    - trả về một mảng RỖNG nếu không có phần tử nào thỏa mãn điều kiện
   - ### `includes()`:
+    - kiểm tra xem phần tử đã cho có tồn tại trong mảng hay không
+    - KHÔNG làm thay đổi mảng ban đầu
+    - trả về kiểu Boolean: true nếu tìm thấy hoặc false nếu không tìm thấy
   - ### `forEach()`:
+    - dùng để duyệt qua từng phần tử của mảng
   - `find()`:
     - dùng để lọc phần tử trong mảng, tuy nhiên nó sẽ trả về giá trị ĐẦU TIÊN tìm thấy ở trong mảng hoặc có thể trả về undefined nếu không tìm thấy
+    - TIÊN tìm thấy ở trong mảng hoặc có thể trả về undefined nếu không tìm thấy
   - ### `concat()`:
     - Phương thức tạo ra một mảng mới bằng cách hợp nhất (kết hợp) các mảng hiện có
     - Phương thức không thay đổi các mảng hiện có
   - ### `indexOf()`:
+    - dùng để tìm kiếm vị trí của phần tử trong mảng
+    - trả về giá trị index ĐẦU TIÊN của mảng nếu phần tử tồn tại trong mảng
+    - trả về -1 nếu phần tử không tồn tại trong mảng
+    - KHÔNG làm thay đổi mảng ban đầu
   - ### `join()`:
+
     - chuyển đổi một mảng thành một chuỗi các giá trị mảng và có thể chỉ định phân tách bằng (,."",...)
+
   - ### `slice()`:
+
     - Phương thức không loại bỏ bất kỳ phần tử nào khỏi mảng
     - Tạo ra một mảng mới
+
   - ### `splice(start,deleteCount)`:
+
     - Thêm 1 giá trị mới vào mảng
     - Lấy ra giá trị của 1 mảng
     - Xóa phần tử khỏi mảng và trả về mảng bị xóa
     - Tạo ra một mảng mới
+
   - ### `toSpliced()`:
+
     - Tương tự splice(), nhưng giữ cho mảng gốc không thay đổi
+
   - ### `toString()`:
+
     - chuyển đổi một mảng thành một chuỗi các giá trị mảng
+
   - ### `at()`:
+
     - trả về phần tử tại vị trí index
+
   - ### `copyWithin()`:
+
     - Phương thức sao chép các thành phần mảng đến một vị trí khác trong một mảng
     - Phương thức ghi đè lên các giá trị hiện có.
     - Phương thức không thêm các giá trị vào mảng
     - Phương pháp không thay đổi độ dài của mảng.
+
   - ### `flat()`:
+
     - Phương thức tạo ra một mảng mới với các phần tử con được nối với độ sâu được chỉ định.
+
   - ### `flatMap()`:
     - Phương thức đầu tiên ánh xạ tất cả các phần tử của một mảng và sau đó tạo một mảng mới bằng cách làm phẳng mảng.

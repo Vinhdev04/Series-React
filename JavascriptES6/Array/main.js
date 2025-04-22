@@ -106,3 +106,35 @@ const days = ["Tue", "Mon", "Wed", "Sun"];
 const newDays = days.splice(1); // [ 'Mon', 'Wed', 'Sun' ]
 console.log(days); // [ 'Tue' ]
 console.log(newDays); // [ 'Mon', 'Wed', 'Sun' ]
+
+const val = ["Poodle", "Bug", "Hugy", "Alaska"];
+const ress = val.some((item, idx) => {
+  return item === "Bug";
+});
+console.log(ress); // true
+
+var words = ["spray", "limit", "elite", "exuberant", "destruction", "present"];
+var result = words.filter(function (word) {
+  return word.length > 6;
+  return word.length > 102; // []
+});
+console.log(words); //  ["spray", "limit", "elite", "exuberant", "destruction", "present"]
+console.log(result); // ["exuberant", "destruction", "present"]
+
+const letter = ["a", "b", "c", "d"];
+letter.forEach((item, idx) => {
+  console.log(item, idx); // ["a",0], ["b"m1], ["c",2], ["d",3]
+});
+
+const score = [10, 9, 8, 4, 9];
+const kq1 = score.includes(9);
+const kq2 = score.includes(-10);
+console.log(kq1); // true
+console.log(kq2); // false
+console.log(score);
+console.log(score.indexOf(9)); // 1 -> true
+console.log(score.indexOf(-9)); // -1 - >false
+
+const resultA = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const KQ = resultA.reduce((sum, num) => sum + num, 0);
+console.log(KQ); // 45
