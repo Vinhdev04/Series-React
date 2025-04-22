@@ -71,3 +71,31 @@ console.log(gender); // Male
 const { username: nameInfo, ...restInfo } = infoUser;
 console.log(nameInfo); // pcv
 console.log(restInfo); //   position: "student"
+
+// *---------------- destructuring - với function ----------------* //
+
+// * Ko sử dụng destructuring - với function*
+const product = {
+  productID: 10,
+  cost: "VNĐ",
+  totalPrice: 5000000,
+};
+
+function getInfoProduct01(product) {
+  const productID = product.productID;
+  const costProduct = product.cost;
+  const total = product.totalPrice;
+
+  console.log(productID); // 10
+  console.log(costProduct); // VNĐ
+  console.log(total); // 5000000
+}
+getInfoProduct01(product);
+
+// * Sử dụng destructuring - với function*
+function getInfoProduct02({ productID, cost = "VNĐ", totalPrice = 0 }) {
+  console.log(productID); // 10
+  console.log(cost); // VNĐ
+  console.log(totalPrice); // 5000000
+}
+getInfoProduct02(product);

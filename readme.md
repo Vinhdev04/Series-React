@@ -294,12 +294,13 @@ src/
 
 ---
 
-#### `5. Destructuring`:
+#### `5. Destructuring [Array,Object,Function]`:
 
 - là một tính năng quan trọng
 - Cho phép trích xuât dữ liệu từ `array` hoặc `object` một cách nhanh và dễ dàng
 - Với `array` trích xuất thông qua `vị trí (index)`
 - Với `object` trích xuất thông qua `property name` `tên biến phải trùng với ten thuộc tính trong Oject`
+- Sử dụng trực tiếp trong tham số (parameter) của hàm. Để tránh việc lặp lại truy cập thuộc tính bên trong thân hàm
 - ` Destructuring` với rest parameter với `Array`
 - ` Destructuring` thiết lập giá trị mặc định với `Array`
 - ` Destructuring` bỏ qua phần tử ko cần thiết với `Array`
