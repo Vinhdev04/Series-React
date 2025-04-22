@@ -307,3 +307,35 @@ src/
 - ` Destructuring` đổi tên biến với `Object`
 - ` Destructuring` với rest parameter với `Object`
 - ` Destructuring` thiết lập giá trị mặc định với `Object`
+
+#### `6. Spread Operator (...)`:
+
+- Rải các phần tử của một mảng ra thành các phần tử riêng lẻ
+- Rải các cặp key-value trong 1 object để kết hợp hoặc sao chép
+- Thường sử dụng để gộp dữ liệu
+- Thường sử dụng để sao chép mang hoặc object
+- Thêm mới dữ liệu một cách linh hoạt
+- Đối với object nếu có cùng key thì key sau sẻ ghi đè key trước
+
+  ```bash
+
+    let user = {
+      id: 1,
+      name: "An",
+      email: "pcv.fed@gmail.com",
+      role: "user",
+    };
+
+    const update = {
+      address: "HCM",
+      favorite: "Coding",
+      role: "admin",
+    };
+
+    console.log(user);
+    // { id: 1, name: 'An', email: 'pcv.fed@gmail.com' ,role: 'user'}
+    user = { ...user, ...update };
+    console.log(user);
+    // { id: 1, name: 'An', email: 'pcv.fed@gmail.com', address: 'HCM', favorite: 'Coding' ,role: 'admin'}
+
+  ```
