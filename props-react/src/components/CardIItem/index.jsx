@@ -5,9 +5,10 @@ import { data } from "../../../data";
 
 function CardItem() {
   console.log(data);
+  console.log({ ...data });
   return (
     <div className="wrap-img">
-      <Item
+      {/* <Item
         img={data[0].image}
         desc={data[0].desc}
         title={data[0].title}
@@ -30,7 +31,13 @@ function CardItem() {
         desc={data[3].desc}
         title={data[3].title}
         className="img"
-      />
+      /> */}
+
+      {/*TODO: sử dụng spread() */}
+      <Item {...data[0]} />
+      <Item {...data[1]} />
+      <Item {...data[2]} />
+      <Item {...data[3]} />
     </div>
   );
 }

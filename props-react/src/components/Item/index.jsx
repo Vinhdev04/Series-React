@@ -1,13 +1,15 @@
 import React from "react";
 
-function Item(props) {
+//TODO: tối ưu việc dùng props bằng destructuring
+
+function Item({ image, title, desc }) {
   return (
     <div className="item">
       <li>
-        <img src={props.img} className="img"></img>
+        <img src={image} className="img"></img>
         <div className="content">
-          <h3>{props.title}</h3>
-          <p>{props.desc}</p>
+          <h3>{title}</h3>
+          <p>{desc}</p>
         </div>
       </li>
     </div>
