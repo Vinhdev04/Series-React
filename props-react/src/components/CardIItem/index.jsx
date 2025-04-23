@@ -1,17 +1,36 @@
 import React from "react";
 import Item from "../Item";
 
-import images06 from "../../assets/images/poodle-06.png";
-import images03 from "../../assets/images/poodle-04.png";
-import images04 from "../../assets/images/poodle-05.png";
+import { data } from "../../../data";
 
 function CardItem() {
+  console.log(data);
   return (
     <div className="wrap-img">
-      <Item img={images04} desc="Test 01" title="Poodle 01" className="img" />
-      <Item img={images06} desc="Test 02" title="Poodle 02" className="img" />
-      <Item img={images03} desc="Test 03" title="Poodle 03" className="img" />
-      <Item img={images04} desc="Test 04" title="Poodle 04" className="img" />
+      <Item
+        img={data[0].image}
+        desc={data[0].desc}
+        title={data[0].title}
+        className="img"
+      />
+      <Item
+        img={data[1].image}
+        desc={data[1].desc}
+        title={data[1].title}
+        className="img"
+      />
+      <Item
+        img={data[2].image}
+        desc={data[2].desc}
+        title={data[2].title}
+        className="img"
+      />
+      <Item
+        img={data[3].image}
+        desc={data[3].desc}
+        title={data[3].title}
+        className="img"
+      />
     </div>
   );
 }

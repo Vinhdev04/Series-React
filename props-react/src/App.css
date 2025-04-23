@@ -5,7 +5,7 @@
   text-align: center;
 }
 body {
-  background-color: #fff;
+  background-color: #dbd1d1;
 }
 .logo {
   height: 6em;
@@ -70,13 +70,12 @@ body {
   margin: -7px;
 }
 
-/* Hover effect */
 .img:hover {
-  transform: translateY(-5px); /* Nhẹ nổi lên */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-/* Nếu bạn cần thêm style cho hình ảnh bên trong */
 .img img {
   width: 100px;
   height: auto;
@@ -84,7 +83,6 @@ body {
   object-fit: cover;
 }
 
-/* Style cho tiêu đề và mô tả bên trong mỗi Item (nếu có) */
 .img .title {
   font-weight: bold;
   font-size: 16px;
@@ -117,9 +115,12 @@ h3 {
 p {
   margin-top: 0;
   margin-bottom: 0;
+  padding: 0 10px;
+  font-size: 14px;
 }
+
 .content {
-  background-color: #888;
+  background-color: #71b797;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
