@@ -2,9 +2,9 @@ import React from "react";
 import Item from "../Item";
 
 import { data } from "../../../data";
+console.log(data);
 
 function CardItem() {
-  console.log(data);
   console.log({ ...data });
   return (
     <div className="wrap-img">

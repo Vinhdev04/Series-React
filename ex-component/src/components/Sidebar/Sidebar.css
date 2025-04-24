@@ -1,0 +1,29 @@
+.sidebar {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2px;
+}
+
+.sidebar-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  color: #202020;
+  font-size: 22px;
+  margin-bottom: 0;
+  border-bottom: 2px solid #aeaeae;
+}
+
+.sidebar > .sidebar-wrap > .sidebar-list {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.sidebar-list > .sidebar-item {
+  padding: 10px;
+  border-bottom: 1px solid #aeaeae;
+  text-align: left;
+}

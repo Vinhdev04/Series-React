@@ -405,4 +405,8 @@ src/
 
 ### Tìm hiểu vê `Props`
 
+#### `children props`:
+
+- Tự động chứa mọi thứ bên trong cặp thẻ mở và đóng của `component`
+- `props.children` sẻ hiển thị nội dung mà bạn muốn đặt giữa cặp thẻ mở và đóng của `component`
 -

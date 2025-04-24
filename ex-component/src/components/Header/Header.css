@@ -1,0 +1,28 @@
+.header,
+.header-navbar > .navbar-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-navbar > .navbar-list {
+  gap: 20px;
+  list-style: none;
+  padding: 10px;
+}
+
+.header-logo > img {
+  width: 50px;
+}
+
+.navbar-list > .navbar-link {
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.navbar-list > .navbar-link:hover {
+  color: blue;
+}
