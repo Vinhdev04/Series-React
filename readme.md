@@ -344,7 +344,7 @@ src/
 
 ## 💠🌐 `REACTJS`
 
-### Cách sử dụng `JSX` trong React
+### Cách sử dụng `JSX` trong React:
 
 - `JSX` là `Javascript Syntax Extension`, cú pháp mở rộng của Javascript
 - File `.jsx` trình duyệt ko hiểu đuợc mà cần công cụ biên dịch sang Javascript (Vite,...)
@@ -356,7 +356,7 @@ src/
 
 ---
 
-### Tìm hiểu khái niệm vòng đời(`Lifecycle`) của `Class Component` trong React
+### Tìm hiểu khái niệm vòng đời(`Lifecycle`) của `Class Component` trong React:
 
 ![Lifecycle](./Sources/Images/lifecycle.png)
 
@@ -403,10 +403,182 @@ src/
 
 ---
 
-### Tìm hiểu vê `Props`
+### Tìm hiểu vê `Components`:
 
-#### `children props`:
+#### Lý thuyết:
+
+![Components](./Sources/Images/component.webp)
+
+- <b>`Components`</b> là một `Object` sử dụng đê tạo các thành phân giao diện UI
+- Nó giúp tách nhỏ từng phần của ứng dụng
+- Dễ tái sử dụng và bảo trì
+
+#### Các loại `Components`:
+
+- `Function components`: Hay còn gọi là `Stateless Components`
+
+  - Là các `components` đuợc viết dưới dạng `function`
+  - Không có trạng thái (`state`)
+  - Không có phương thức `lifecycle` riêng của nó
+  - Ví dụ:
+
+    ```bash
+      import React from 'react';
+
+      function MyComponent(props) {
+        return (
+          <div>
+            <h1>Hello, {props.name}!</h1>
+            <p>{props.message}</p>
+          </div>
+        );
+      }
+      export default MyComponent;
+    ```
+
+- `Class components`: Hay còn gọi là `Stateful Components`
+
+  - Là các `components` đựơc viết dưới dạng `class`
+  - Có trạng thái (`state`)
+  - Có các phương thức (`lifecycle`) riêng của nó
+  - Ví dụ:
+
+    ```bash
+       import React from 'react';
+
+       class MyComponent extends React.Component {
+         constructor(props) {
+           super(props);
+           this.state = { count: 0 };
+       }
+
+         handleClick = () => {
+           this.setState(prevState => ({
+             count: prevState.count + 1
+           }));
+         };
+
+         render() {
+           return (
+             <div>
+               <h1>Count: {this.state.count}</h1>
+               <button onClick={this.handleClick}>Increment</button>
+             </div>
+           );
+         }
+       }
+       export default MyComponent;
+    ```
+
+- `Presentational Components`:
+
+  - Là các `component` chỉ có nhiệm vụ hiển thị dữ liệu
+  - Không xử lý `logic - nghiệp vụ`
+  - Chúng thường được gọi là `dumb components`
+  - Ví dụ:
+
+    ```bash
+
+      import React from 'react';
+      const Greeting = ({ name }) => {
+        return (
+          <div>
+            <h1>Hello, {name}!</h1>
+            <p>Welcome to my website.</p>
+          </div>
+        );
+      };
+
+      export default Greeting;
+    ```
+
+- `Container Components`:
+
+  - Là các `components` sử dụng để `xử lý nghiệp vụ và logic`
+  - Truy cập dữ liệu và truyền nó xuống các `Presentational Components` để hiển thi dữ liệu
+  - Chúng thường được gọi là `smart components`
+  - Ví dụ:
+
+    ```bash
+      import React from 'react';
+      import { connect } from 'react-redux';
+      import { fetchTodos } from '../actions';
+      import TodoList from '../components/TodoList';
+
+      class TodoListContainer extends React.Component {
+        componentDidMount() {
+          this.props.fetchTodos();
+        }
+
+        render() {
+          const { todos, isLoading, error } = this.props;
+
+          return <TodoList todos={todos} isLoading={isLoading} error={error} />;
+        }
+      }
+
+      const mapStateToProps = state => ({
+        todos: state.todos.data,
+        isLoading: state.todos.isLoading,
+        error: state.todos.error,
+      });
+
+      export default connect(mapStateToProps, { fetchTodos })(TodoListContainer);
+
+
+    ```
+
+---
+
+### Tìm hiểu vê `State`:
+
+![State](./Sources/Images/state.webp)
+
+- giữ thông tin về component
+- Bất cứ khi nào dữ liệu thay đổi trong một component, State có thể được sử dụng.
+- Giống như props, sate cũng giữ thông tin về component. Tuy nhiên, loại thông tin và cách xử lý nó khác nhau. State hoạt động khác với Props.
+- `state` là thành phần của `component`
+- `không nên cập nhật` state `bằng cách sử dụng trực tiếp this.state` mà `luôn sử dụng setState để cập nhật state` của các đối tượng.
+- Sử dụng `setState để re-renders một component` và `tất cả các component con`.
+
+---
+
+### Tìm hiểu vê `Props`:
+
+![Props](./Sources/Images/props.png)
+
+- Props thực chất là viết tắt của `Properties`
+- giữ thông tin về component
+- `props` lại được `truyền` giá trị từ `bên ngoài` vào `component`
+- Nó không bao giờ được sửa đổi prop của chính nó.
+- `props` có thể đến từ `parent`, hoặc có thể `được thiết lập bởi chính component đó`.
+- Bạn `có thể thay đổi props` bằng cách sử dụng `setProps hay replaceProps` nhưng nó `không được khuyến khích`.
+- Kể từ lúc chúng ta truyền props vào component thì chúng không được thay đổi. Điều này giúp bạn nghĩ đến sẽ sử dụng props cho bất kì component nào mà luôn hiển thị cùng 1 đầu ra cho cùng 1 đầu vào. Điều này giúp chúng ra dễ dàng kiểm soát nó.
+
+---
+
+### `children props`:
 
 - Tự động chứa mọi thứ bên trong cặp thẻ mở và đóng của `component`
 - `props.children` sẻ hiển thị nội dung mà bạn muốn đặt giữa cặp thẻ mở và đóng của `component`
--
+
+---
+
+### 🔍 So sánh `state` và `props`
+
+![So sánh state và props](./Sources/Images/03-state-vs-props.png)
+
+- Trong ReactJS, `state` và `props` là hai khái niệm cốt lõi giúp quản lý và truyền dữ liệu trong các component.
+- Dưới đây là bảng so sánh chi tiết giữa `state` và `props`.
+
+| Tiêu chí              | **State**                                                         | **Props**                                                    |
+| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Định nghĩa**        | Là trạng thái nội bộ của một component                            | Là thuộc tính được truyền từ component cha vào component con |
+| **Khả năng thay đổi** | Có thể thay đổi thông qua `setState` hoặc `useState`              | Không thể thay đổi trong component con                       |
+| **Nơi khởi tạo**      | Được định nghĩa trong chính component                             | Được truyền từ bên ngoài (component cha)                     |
+| **Quản lý bởi**       | Component hiện tại                                                | Component cha                                                |
+| **Tái sử dụng**       | Thường không chia sẻ giữa các component                           | Dễ dàng tái sử dụng trong nhiều component khác               |
+| **Mục đích sử dụng**  | Quản lý dữ liệu thay đổi theo thời gian hoặc tương tác người dùng | Truyền dữ liệu và hàm từ component cha                       |
+| **Dùng trong**        | Class và Function component                                       | Class và Function component                                  |
+
+---
