@@ -581,4 +581,6 @@ src/
 | **Mục đích sử dụng**  | Quản lý dữ liệu thay đổi theo thời gian hoặc tương tác người dùng | Truyền dữ liệu và hàm từ component cha                       |
 | **Dùng trong**        | Class và Function component                                       | Class và Function component                                  |
 
+- **Component cha sẻ xử lý Event Handling sau đó truyền cho Component con thông qua props**
+
 ---
