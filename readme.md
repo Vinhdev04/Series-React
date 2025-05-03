@@ -584,3 +584,42 @@ src/
 - **Component cha sẻ xử lý Event Handling sau đó truyền cho Component con thông qua props**
 
 ---
+
+## 🪝HOOK IN REACT
+
+**Lưu Ý:**
+
+- `Hook` chỉ có thể gọi bên trong các thành phần hàm `Component` React
+- `Hook` chỉ có thể gọi ở câp cao nhất của `Component`
+- `Hook` không thể có điều kiện
+- `Hook` sử dụng Hook để theo dõi trạng thái ứng dụng
+- `Hook` cho phép các thành phần chức năng có quyền truy cập vào state và các tính năng khác của React
+- `Hook` không thể gọi trong các câu lệnh điều kiện
+
+---
+
+### 🪝 `01: HOOK[useState]:`
+
+- `Trạng thái dữ liệu`
+
+#### Dùng khi nào ?
+
+- Khi muốn lưu dữ liệu thay đổi thì giao diện tự động được cập nhật `(re-render)`
+
+#### Cách dùng
+
+```bash
+  import {useState} from "react"
+  function Component(){
+    const [state,setState] = useState(initState)
+    ...
+  }
+```
+
+#### Lưu ý
+
+- `Component` được `re-render` sau khi `setState`
+- `Initial state` chỉ dùng cho lân đầu tiên
+- Sử dụng `Set state` với `callback`
+- Sử dụng `Initial state` với `callback` nếu có xử lý logic đi kèm
+- `Set state` là thay thế `state` bằng giá trị mới
