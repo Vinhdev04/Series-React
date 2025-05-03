@@ -609,17 +609,174 @@ src/
 #### Cách dùng
 
 ```bash
-  import {useState} from "react"
-  function Component(){
-    const [state,setState] = useState(initState)
-    ...
-  }
+    import {useState} from "react"
+    function Component(){
+      const [state,setState] = useState(initState)
+      ...
+    }
 ```
 
 #### Lưu ý
 
 - `Component` được `re-render` sau khi `setState`
+
+  ```bash
+      import React, { useState } from 'react';
+      function Counter(props) {
+          const [counter,setCounter] = useState(0);
+          console.log(`Initial value: ${counter}`) //Output: 0
+          const handleIncrease = (e) => {
+              setCounter(counter + 1 );
+          }
+
+          return (
+              <>
+                  <h1 style={{color: "#9a9acd"}}>Value: {counter}</h1>
+                  <button onClick={handleIncrease}>Increase</button>
+              </>
+          );
+      }
+      export default Counter;
+  ```
+
 - `Initial state` chỉ dùng cho lân đầu tiên
+
+  ```bash
+      import React, { useState } from 'react';
+      function Counter(props) {
+          const [counter,setCounter] = useState(0);
+
+          const handleIncrease = (e) => {
+              setCounter(counter + 1 );
+          }
+
+          return (
+              <>
+                  <h1 style={{color: "#9a9acd"}}>Value: {counter}</h1>
+                  <button onClick={handleIncrease}>Increase</button>
+              </>
+          );
+      }
+      export default Counter;
+  ```
+
 - Sử dụng `Set state` với `callback`
+
+  - NO: ❌
+
+    ```bash
+        const handleIncrease = (e) => {
+          // #?: Kết quả sẻ là ? -> react sẻ hiểu là 1 -> Lấy counter ban đầu = 0 sau đó tăng + 1
+            setCounter(counter + 1);
+            setCounter(counter + 1);
+            setCounter(counter + 1);
+            // Output: 2
+        }
+    ```
+
+  - YES: ✅
+
+    ```bash
+        const handleIncrease = (e) => {
+            setCounter(prev => prev + 3);
+        }
+    ```
+
 - Sử dụng `Initial state` với `callback` nếu có xử lý logic đi kèm
+
+  - NO: ❌
+
+    ```bash
+        import React, { useState } from 'react';
+        function User(props) {
+        //TODO: Sử dụng `Initial state` với `callback` nếu có xử lý logic đi kèm
+          const [info,setInfo] = useState({
+          name: "Ana",
+          age: 20,
+          address: "Hà Tĩnh, VN"
+        })
+
+        const handleUpdate = (e) => {
+            setInfo({
+                email: "hana@gmail.com"
+            })
+            // #? Kết quả? -> "email":"hana@gmail.com" sẻ ghi đè Object khởi tạo ban đầu
+        }
+        return (
+            <div>
+                <ul>
+                    <li>{JSON.stringify(info)}</li>
+                </ul>
+                <button onClick={handleUpdate}>Update Info</button>
+            </div>
+        );
+        }
+        export default User;
+    ```
+
+  - YES: ✅
+
+    ```bash
+        import React, { useState } from 'react';
+        function User(props) {
+        //TODO: Sử dụng `Initial state` với `callback` nếu có xử lý logic đi kèm
+        const [info,setInfo] = useState({
+          name: "Ana",
+          age: 20,
+          address: "Hà Tĩnh, VN"
+        })
+
+        const handleUpdate = (e) => {
+          setInfo({
+              ...info,
+              email: "hana@gmail.com"
+          })
+          // #? Kết quả? -> "name":"Ana","age":20,"address":"Hà Tĩnh, VN","email":"hana@gmail.com"
+        }
+
+        return (
+            <div>
+                <ul>
+                    <li>{JSON.stringify(info)}</li>
+                </ul>
+                <button onClick={handleUpdate}>Update Info</button>
+            </div>
+        );
+        }
+        export default User;
+    ```
+
+  - Sử dụng `Initial state` với `callback` nếu có xử lý logic đi kèm
+
+    ```bash
+        import React, { useState } from 'react';
+        const orders = [100,200,300];
+        function Total(props) {
+            // NO: ❌
+            // const total = orders.reduce((total,current) => {
+            //     return  total + current;
+            // })
+            // console.log(total);
+
+            const [price,setPrice] = useState(()=>{
+                // YES: ✅
+                const total = orders.reduce((total,current) => total + current
+                )
+                console.log(total);
+                return total;
+            });
+
+            const handleUpdate = () => {
+                setPrice(price + 100);
+            }
+            return (
+                <div>
+                    <h1>{price}</h1>
+                    <button onClick={handleUpdate}>Update</button>
+                </div>
+            );
+        }
+        export default Total;
+    ```
+
 - `Set state` là thay thế `state` bằng giá trị mới
