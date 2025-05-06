@@ -3,11 +3,23 @@ import './App.css';
 import Tab from './components/Tab';
 import DATA from "./data.js";
 function App() {
-  const [selected,setSelected] = useState("component");
+  const [selected,setSelected] = useState();
   const handleSelect = (selectedButton) => {
     setSelected(selectedButton);
   }
-  console.log(selected);
+  
+  // cách 3: gán biến riêng
+  let content = <p>Please click on button!</p>;
+  if(selected) {
+    content = (
+      <ul class="list">
+                  <h3>{DATA[selected].title}</h3>
+                  <p>{DATA[selected].desc}</p> <pre>
+                  <code>{DATA[selected].code}</code>
+                </pre>
+      </ul>
+    );
+  }
   
   return (
     <>
@@ -17,12 +29,29 @@ function App() {
             <Tab onSelect = {()=> {handleSelect("props")}}>Props</Tab>
             <Tab onSelect = {()=> {handleSelect("state")}}>State</Tab>
           </menu>
-          <ul class="list">
-              <h3>{DATA[selected].title}</h3>
-              <p>{DATA[selected].desc}</p> <pre>
-              <code>{DATA[selected].code}</code>
-            </pre>
-          </ul>
+          {/* Cách 1: Toán tử 3 ngôi */}
+          {/* {(!selected) ? (
+            <p>Please click on button!</p>
+          ) : (
+              <ul class="list">
+                  <h3>{DATA[selected].title}</h3>
+                  <p>{DATA[selected].desc}</p> <pre>
+                  <code>{DATA[selected].code}</code>
+                </pre>
+              </ul>
+          )} */}
+
+           {/* Cách 2: Toán tử && */}
+            {/* {(!selected) && (<p>Please click on button!</p>)}
+            {selected && ( <ul class="list">
+                  <h3>{DATA[selected].title}</h3>
+                  <p>{DATA[selected].desc}</p> <pre>
+                  <code>{DATA[selected].code}</code>
+                </pre>
+              </ul>)} */}
+
+              {/* Cách 3:  */}
+              {content}
     </>
   )
 }
