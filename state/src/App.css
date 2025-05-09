@@ -40,16 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-img {
-  width: 150px;
-  height: auto;
-}
-button {
-  margin-top: 20px;
-}
-
-button.active {
-  background: #7925d3;
-  color: #ebe7ef;
-}

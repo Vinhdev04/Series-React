@@ -11,7 +11,7 @@ function ToogleBtn(props) {
         <div>
             <img src={isOn ? light : dark} alt="Bóng đèn" />
             <h1>{isOn ? 'Bóng đèn đang bật' : 'Bóng đèn đang tắt'}</h1>
-            <button onClick={handleBtn}>
+            <button onClick={handleBtn} className={isOn ? 'active' : ''}>
                 {isOn ? 'Tắt đèn' : 'Bật đèn'}
             </button>
         </div>
