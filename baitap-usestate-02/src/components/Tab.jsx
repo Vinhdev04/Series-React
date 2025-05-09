@@ -1,10 +1,9 @@
-import React from 'react';
 
-function Tab({children,onSelect}) {
+function Tab({children,...props}) {
     return (
         <>
             <div>
-                <button onClick={onSelect}>{children}</button>
+                <button {...props}>{children}</button>
             </div>
         </>
     );

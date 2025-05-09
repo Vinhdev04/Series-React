@@ -24,10 +24,10 @@ function App() {
   return (
     <>
           <menu className='tab'>
-            <Tab onSelect = {()=> {handleSelect("component")}}>Component</Tab>
-            <Tab onSelect = {()=> {handleSelect("jsx")}}>JSX</Tab>
-            <Tab onSelect = {()=> {handleSelect("props")}}>Props</Tab>
-            <Tab onSelect = {()=> {handleSelect("state")}}>State</Tab>
+            <Tab onClick = {()=> {handleSelect("component")}}>Component</Tab>
+            <Tab onClick = {()=> {handleSelect("jsx")}}>JSX</Tab>
+            <Tab onClick = {()=> {handleSelect("props")}}>Props</Tab>
+            <Tab onClick = {()=> {handleSelect("state")}}>State</Tab>
           </menu>
           {/* Cách 1: Toán tử 3 ngôi */}
           {/* {(!selected) ? (
