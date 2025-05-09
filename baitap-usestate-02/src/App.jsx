@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './App.css';
+import Menu from "./components/Menu.jsx";
 import Tab from './components/Tab';
 import DATA from "./data.js";
 function App() {
@@ -23,12 +24,17 @@ function App() {
   
   return (
     <>
-          <menu className='tab'>
-            <Tab onClick = {()=> {handleSelect("component")}}>Component</Tab>
-            <Tab onClick = {()=> {handleSelect("jsx")}}>JSX</Tab>
-            <Tab onClick = {()=> {handleSelect("props")}}>Props</Tab>
-            <Tab onClick = {()=> {handleSelect("state")}}>State</Tab>
-          </menu>
+          <Menu className="tab"
+            button={  
+            <>
+              <Tab onClick = {()=> {handleSelect("component")}}>Component</Tab>
+              <Tab onClick = {()=> {handleSelect("jsx")}}>JSX</Tab>
+              <Tab onClick = {()=> {handleSelect("props")}}>Props</Tab>
+              <Tab onClick = {()=> {handleSelect("state")}}>State</Tab>
+            </>
+              }
+            >
+          </Menu>
           {/* Cách 1: Toán tử 3 ngôi */}
           {/* {(!selected) ? (
             <p>Please click on button!</p>
@@ -53,7 +59,7 @@ function App() {
               {/* Cách 3:  */}
               {content}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
