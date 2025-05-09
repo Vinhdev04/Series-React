@@ -1,0 +1,38 @@
+.book-container {
+  background: #20262e;
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(120 109 109 / 30%);
+}
+
+.book-title {
+  text-transform: uppercase;
+  fzont-size: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 5px #6841ea;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 20px 0;
+}
+
+.book-item {
+  background: blueviolet;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-item:hover {
+  background: #6841ea;
+  transform: zoom(1.05);
+  box-shadow: 0 0 10px rgb(120 109 109 / 30%);
+}
