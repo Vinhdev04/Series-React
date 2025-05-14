@@ -344,6 +344,89 @@ src/
 
 ## 💠🌐 `REACTJS`
 
+### `React` là gì?:
+
+- `ReactJS` là 1 trong những `libary` tạo ra `SPA`
+- Được tạo ra bởi FACEBOOK
+
+### `SPA` là gì?:
+
+- `SPA` - `Single-Page Application`
+- Cách tiếp cận hiện đại hơn
+- Không yêu cầu tải lại trang trong quá trình sử dụng
+- `ReactJS` là 1 trong những `libary` tạo ra `SPA`
+- Ví dụ: Facebook,Twitter,Google,..
+- Shoppe,Zingmp3,30Shine,...
+
+---
+
+### `MPA` là gì?:
+
+- `MPA` - `Multi-Page Application`
+- Là cách tiếp cận cổ điển hơn
+- Tải lại trang trong quá trình sử dụng (click vào link, chuyên trang)
+
+---
+
+### So sánh `SPA` và `MPA`:
+
+#### Tốc độ:
+
+- `SPA` nhanh hơn khi sử dụng
+  - Phần lớn tài nguyên được tải trong lân đầu
+  - Trang chỉ tải thêm dữ liệu mới khi cần
+- `MPA` chậm hơn khi sử dụng
+  - Do luôn tải lại toàn bộ dữ liệu khi truy cập và chuyên hướng
+
+---
+
+#### Bóc tách:
+
+- `SPA` có FE riêng biệt
+- `MPA` FE và BE phụ thuộc vào nhau nhiều
+
+---
+
+#### SEO:
+
+- `SPA` không thân thiện với SEO như `MPA`
+- `SPA` Trải nghiệm trên Mobile tốt hơn
+
+---
+
+#### UX:
+
+- `SPA` cho UX tôt với các thao tác chuyển trang
+- Trải nghiệm trênn Mobile tốt hơn
+
+---
+
+#### Quá trình phát triển:
+
+- `SPA` dễ tái sư dụng với `Component`
+- `SPA` bóc tách FE , BE
+  - Phát triển song song
+  - Phát triển trên Mobile tốt hơn
+
+---
+
+#### Phụ thuộc Javascript:
+
+- `SPA` phụ thuộc hoàn toàn vào Javascript
+- `MPA` có thê không cần Javascript
+---
+### `CSR` là gì?:
+
+- `CSR` - `Client Side Rendering`
+
+---
+
+### `SSR` là gì?:
+
+- `SSR` - `Server Side Rendering`
+
+---
+
 ### Cách sử dụng `JSX` trong React:
 
 - `JSX` là `Javascript Syntax Extension`, cú pháp mở rộng của Javascript
