@@ -414,16 +414,38 @@ src/
 
 - `SPA` phụ thuộc hoàn toàn vào Javascript
 - `MPA` có thê không cần Javascript
+
 ---
+
+## `CSR` & `SSR`
+
+![](./Sources/Images/SSR&CSR.webp)
+
 ### `CSR` là gì?:
 
 - `CSR` - `Client Side Rendering`
+- Client-Side Rendering (CSR) là phương thức mà browser (client) đảm nhiệm việc render các nội dung HTML, CSS, JavaScript từ khung ban đầu.
+- Lượng dữ liệu lần đầu load về khá nặng
+- Nội dung hiển thị ra lần đầu chậm hơn so với SSR, tuy nhiên những lần sau thì quá nhanh do việc xử lý ngay trên client.
+- SEO bị ảnh hưởng, do nội dung web được sinh trên client, khiến crawler của của Seach engine không tiếp xúc được nội dung.
+  <br><br>
+  ![](./Sources/Images/CSR.png)
+  <br><br>
+
+  ![](./Sources/Images/CSR2.jpg)
 
 ---
 
 ### `SSR` là gì?:
 
 - `SSR` - `Server Side Rendering`
+- Thay vì browser phải "render" mọi thứ, server sẽ handle và trả về HTML hoàn thiện của page.
+- Trang web phải xử lý lại hoàn toàn và load lại từ đầu nếu chỉ có một thay đổi nhỏ trong nội dung. (Ví dụ tiêu đề thay đổi …)
+- Việc xử lý nội dung HTML khiến hao tốn tài nguyên server, gây chậm trễ khi xử lý các request khác.
+- Lượng request lên server rất nhiều, do mọi tác vụ đều phải xử lý lại trên server và render lại HTML
+- TTFB (Time To First Byte) cao do cần phải xử lý trên server, sẽ ảnh hưởng tới một vài công cụ benchmark Và từ những nhược điểm đó, Client Side Render (CSR) được sinh ra.
+  <br><br>
+  ![](./Sources/Images/SSR.webp)
 
 ---
 
